@@ -1,15 +1,21 @@
 <?
 # Database Connection
-mysql_connect('localhost', 'admin_user', 'Trunks15')or die(mysql_error());
-mysql_select_db('admin_acl')or die(mysql_error());
+$config['hostname'] = 'localhost';
+$config['username'] = 'username';
+$config['password'] = 'password';
+$config['database'] = 'database';
 
 # ACL Class
 include('acl.php');
 
+# Pass on the Database information
+$acl = new Acl($config);
+
+# Get information via URL
 $getUser = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 # Tell ACL which user to check
-$acl = new Acl($getUser);
+$acl->setUser($getUser);
 
 if($acl->hasAccess('admin_access') == true)
 {
