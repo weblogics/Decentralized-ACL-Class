@@ -3,7 +3,7 @@ The ACL class was designed to do nothing other then do Access Control. The goal 
 ## Features
 - Flexible
 - Decentralized
-- Well documented
+- [Well documented](https://github.com/Blaxus/Decentralized-ACL-Class/blob/master/Documentation.md)
 - Free Support
 
 ## Changelog
