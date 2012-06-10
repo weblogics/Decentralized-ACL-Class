@@ -12,7 +12,6 @@ This is a basic PHP Class. So to use this, all you have to do is the following:
 - Copy **acl.php** to your directory of choosing.
 - Use PHP to include the file.
 
-	```php
 	# Database Connection
 	$db['host'] = 'localhost';
 	$db['user'] = 'username';
@@ -24,7 +23,6 @@ This is a basic PHP Class. So to use this, all you have to do is the following:
 	
 	# Pass on the Database information
 	$acl = new Acl($db);
-	```
 
 - Execute **tables.sql** in your PHPMyAdmin or other SQL Management tool.
 
@@ -34,10 +32,8 @@ ___
 
 When you create an ACL Object, you must pass on the User's unique user id. Then you can use the Object to manipulate or request information about what this user can do.
 
-    ```php
 	# Tell ACL which user to check
     $acl->setUser(1);
-	```
 
 An access control requires 3 Resources.
 
@@ -58,11 +54,9 @@ ___
 You cannot see the workings of the script if no one has permissions to do anything of course.
 Here we update the Permissions of **Role 1**.
 
-    ```php
 	$permissions = array('admin_access','premium_access');
     
     $acl->setPermissions(1, $permissions);
-	```
 
 Now, any user that is given the **Role 1** has access to view pages that are protected by these permissions.
 
@@ -73,11 +67,9 @@ ___
 
 Here we update the roles of **User 1**.
 
-    ```php
 	$roles = array(2,3);
     
     $acl->setRole(1, $roles);
-	```
 
 Now, **User 1** has access to view pages that are protected by the permissions that Role 1 and Role 2 have.
 
@@ -88,9 +80,8 @@ ___
 
 You can easily check if the user has access to the permissions to access something.
 
-    ```php# Check if user has Permissions to access admin_access
+    # Check if user has Permissions to access admin_access
     if($acl->hasAccess('admin_access'))
     {
         echo '- User has access to Admin Only Areas';
     }
-	```
