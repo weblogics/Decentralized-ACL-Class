@@ -12,7 +12,8 @@ This is a basic PHP Class. So to use this, all you have to do is the following:
 - Copy **acl.php** to your directory of choosing.
 - Use PHP to include the file.
 
-    # Database Connection
+    ```php
+	# Database Connection
     $db['host'] = 'localhost';
     $db['user'] = 'username';
     $db['pass'] = 'password';
@@ -23,9 +24,9 @@ This is a basic PHP Class. So to use this, all you have to do is the following:
     
     # Pass on the Database information
     $acl = new Acl($db);
+	```
 
-
-- Execute <em>tables.sql</em> in your PHPMyAdmin or other SQL Management tool.
+- Execute **tables.sql** in your PHPMyAdmin or other SQL Management tool.
 
 
 ___
